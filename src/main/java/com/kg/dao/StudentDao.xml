@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kg.dao.StudentDao">
+    <resultMap id="resultMapper" type="com.kg.domain.Student">
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+    </resultMap>
+    <insert id="insertStudent">
+insert into  db.student2(id, name, age) values (null,#{name},#{age})
+    </insert>
+    <select id="selectStudents" resultMap="resultMapper">
+        select id,name,age from db.student2 order by age desc ;
+    </select>
+
+</mapper>
